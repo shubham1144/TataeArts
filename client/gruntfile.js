@@ -18,29 +18,42 @@ module.exports = function(grunt){
 				}
 			}
 		},
-		//Task for concatinating the js files
+		//Task for concatinating the js files(Currently not used as annotate concantinates aswell)
 		concat: {
 			js: { //target
 				src: ['./src/app.js', './src/js/*.js'],
-				dest: './dist/app.js'
+				dest: './dist/min-safe/<%= pkg.name %>.js'
 			}
 		},
-		//Task to minify the files that are concatinated
+		//Task for concatinating annoting the code to avoid issues once minified
+		ngAnnotate: {
+			options: {
+				singleQuotes: true
+			},
+			app: {
+				files: {
+				'./dist/min-safe/<%= pkg.name %>.js': ['./src/app.js', './src/js/*.js']
+				}
+			}
+		},
+		//Task to minify the files that are concatinated and annoted
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+				banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+				singleQuotes: true
 			},
 			dist: {
 				files: {
-				'dist/<%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
+				'./dist/<%= pkg.name %>.min.js': ['./dist/min-safe/<%= pkg.name %>.js']
 				}
 			}
 		}
 	});
 	//Load the above npm tasks
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-concat');
+	//grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-ng-annotate');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	//Register the above tasks
-	grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+	grunt.registerTask('default', ['jshint', 'ngAnnotate', 'uglify']);
 };
