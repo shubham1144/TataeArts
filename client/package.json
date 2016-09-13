@@ -1,0 +1,19 @@
+{
+  "name": "tataearts",
+  "version": "1.0.0",
+  "description": "Structured front end for marketting application being developed for Mr.Tukaram Chodankar ",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "modularizing",
+    "foundation"
+  ],
+  "author": "Shubham Chodankar",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1"
+  }
+}
