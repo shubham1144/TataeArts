@@ -2,7 +2,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 80;
 //We need to set location of our static files
 app.use(express.static(path.join(__dirname, "../../client")));
 
