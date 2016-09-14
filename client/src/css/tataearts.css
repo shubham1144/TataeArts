@@ -26,13 +26,179 @@
     background: #315989;
 }
 .firstSection{
-	padding-bottom: 120px;
+	padding-bottom: 80px;
 	color: #fff;
 	font-size: 22px;
 }
 .firstSectiontext{
 	margin: 0 auto;
-	max-width: 620px;
-	padding-top: 29%;
+	max-width: 475px;
+	padding-top: 12%;
 }
-    
+ 
+
+/**
+ * Circle Styles
+ */
+
+.circle {
+	position: relative;
+	display: block;
+	margin: 4em 2em 6em 5em;
+	background-color: transparent;
+	color: #222;
+	text-align: center;
+	height: 56px; 
+	width: 132px;
+	float: left;
+}
+
+.circle:after {
+	display: block;
+	padding-bottom: 100%;
+	width: 100%;
+	height: 0;
+	border-radius: 50%;
+	background-color: #ddd;
+	background: url(https://images8.alphacoders.com/370/370799.jpg);
+	content: "";
+}
+
+
+.circle__inner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.circle__wrapper {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+
+.circle__content {
+	display: table-cell;
+	color: white;
+	padding: 2em 1em 1em 1em;
+	vertical-align: middle;
+}
+
+@media (min-width: 480px) {
+	.circle__content {
+		font-size: 2em;
+	}
+}
+
+@media (min-width: 768px) {
+	.circle__content {
+		font-size: 1em;
+	}
+}
+
+@media (min-width: 1280px) {
+
+	.circle {
+		position: relative;
+		display: block;
+		margin: 4em 2em 6em 5em;
+		background-color: transparent;
+		color: #222;
+		text-align: center;
+		height: 56px; 
+		width: 21%;
+		float: left;
+	}
+	.firstSectiontext{
+		margin: 0 auto;
+		max-width: 454px;
+		padding-top: 33%;
+	}
+
+}
+
+@media (max-width: 1280px){
+	.circle {
+		position: relative;
+		display: block;
+		margin: 4em 2em 6em 5em;
+		background-color: transparent;
+		color: #222;
+		text-align: center;
+		height: 56px; 
+		width: 14%;
+		float: left;
+	}
+}
+
+@media (max-width: 830px){
+	.circle {
+		position: relative;
+		display: block;
+		margin: 4em 11em 25% 32%;
+		background-color: transparent;
+		color: #222;
+		text-align: center;
+		height: 56px; 
+		width: 32%;
+		float: left;
+	}
+	.circle__content {
+		display: table-cell;
+		padding: 30%;
+		vertical-align: middle;
+		font-size: 70%;
+	}
+}
+
+
+@media (max-width: 500px){
+	.circle {
+		position: relative;
+		display: block;
+		margin: 2em 11em 37% 25%;
+		background-color: transparent;
+		color: #222;
+		text-align: center;
+		height: 56px; 
+		width: 49%;
+		float: left;
+	}
+
+	.circle__content {
+		display: table-cell;
+		padding: 9%;
+		vertical-align: middle;
+		font-size: 62%;
+	}
+}
+@media (max-width: 200px){
+	body {
+		padding-top: 36%;
+	}
+	.circle {
+		position: relative;
+		display: block;
+		margin: 2em 11em 37% 8%;
+		background-color: transparent;
+		color: #222;
+		text-align: center;
+		height: 56px; 
+		width: 88%;
+		float: left;
+	}
+
+	.circle__content {
+		display: table-cell;
+		padding: 9%;
+		vertical-align: middle;
+		font-size: 62%;
+	}
+}
+
+/**
+ * Circle Styles end
+ */
