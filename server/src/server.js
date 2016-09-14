@@ -2,6 +2,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+//Setting the port as 80 as we have configured 80 as default port for http on EC2 instance
 var PORT = process.env.PORT || 80;
 //We need to set location of our static files
 app.use(express.static(path.join(__dirname, "../../client")));
