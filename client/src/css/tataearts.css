@@ -1,19 +1,38 @@
 @media only screen and (max-width: 654px){
     body{
-      padding-top: 13%;
+      padding-top: 7%;
 	}
 	.title{
 		margin: 2% 0% 2% 1%;
-		font-size:20px;
+		font-family: "Comic Sans MS", "Comic Sans", cursive;
+		font-size:23px;
 	}
 }
 
 @media only screen and (min-width: 654px){
 	body{
-      padding-top: 11%;
+      padding-top: 5%;
 	}
 	.title{
-		margin: 2% 0% 2% 1%;
-		font-size:28px;
+		margin: 1% 0% 2% 1%;
+		font-family: "Comic Sans MS", "Comic Sans", cursive;
+		font-size: 34px;
+		height: 40px;
 	}
 }
+
+
+.background-dark-bc {
+    background: #315989;
+}
+.firstSection{
+	padding-bottom: 120px;
+	color: #fff;
+	font-size: 22px;
+}
+.firstSectiontext{
+	margin: 0 auto;
+	max-width: 620px;
+	padding-top: 29%;
+}
+    
