@@ -1,2 +1,2 @@
 //Initializing the application
-var app = angular.module('tataeArtsApp', []);
+var app = angular.module('tataeArtsApp', ['ngAnimate','ui.bootstrap']);

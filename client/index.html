@@ -6,9 +6,11 @@
 		<link rel="stylesheet" href="./assets/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./src/css/tataearts.css">
 		<!--Include all js scripts required-->
-		<script src="assets/jquery/dist/jquery.min.js"></script>
-		<script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>		
 		<script src="assets/angular/angular.min.js"></script>
+		<script src="assets/angular-animate/angular-animate.min.js"></script>
+		<script src="assets/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="assets/jquery/dist/jquery.min.js"></script>
+		<script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="dist/tataearts.min.js"></script>
 	</head>
 	<body ng-app="tataeArtsApp" ng-controller="HomeCtrl">
@@ -52,6 +54,21 @@
 				<!-- circle ends here -->	
 			</div>
 			<p class="firstSectiontext">{{test}}</p>
+		</div>
+		<div class="container-fluid background-orange-bc" style="height: 560px;">
+			<!-- Adding code for carousal here -->
+			<div style="height: 305px;padding-top: 3%;">
+				<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+					<div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+						<img ng-src="{{slide.image}}" style="margin:auto;">
+						<div class="carousel-caption">
+							<h4>Slide {{slide.id}}</h4>
+							<p>{{slide.text}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Code for carousal ends here -->
 		</div>
 	</body>
 </html>

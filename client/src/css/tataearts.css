@@ -25,6 +25,9 @@
 .background-dark-bc {
     background: #315989;
 }
+.background-orange-bc{
+	background: linear-gradient(0deg, #f06e47, #ffab4a);
+}
 .firstSection{
 	padding-bottom: 80px;
 	color: #fff;
@@ -202,3 +205,5 @@
 /**
  * Circle Styles end
  */
+
+
