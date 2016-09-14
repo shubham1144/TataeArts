@@ -38,7 +38,7 @@
 				<div class="circle">
 					<div class="circle__inner">
 						<div class="circle__wrapper">
-							<div class="circle__content">Our Work</div>
+							<div class="circle__content">Our Journey</div>
 						</div>
 					</div>
 				</div>
@@ -55,14 +55,16 @@
 			</div>
 			<p class="firstSectiontext">{{test}}</p>
 		</div>
-		<div class="container-fluid background-orange-bc" style="height: 560px;">
+		<div class="container-fluid background-orange-bc" style="height: 612px;">
+			<div class="row" style="color: white;text-align: center;font-size: 2.42em;">
+                <h2 style="font-weight: 400;">Our Work At A Glance</h2>
+			</div>
 			<!-- Adding code for carousal here -->
-			<div style="height: 305px;padding-top: 3%;">
+			<div style="height: 305px;padding-top: 1%;">
 				<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
 					<div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
 						<img class="img-fluid" ng-src="{{slide.image}}" style="margin:auto;">
 						<div class="carousel-caption">
-							<h4>Slide {{slide.id}}</h4>
 							<p>{{slide.text}}</p>
 						</div>
 					</div>
