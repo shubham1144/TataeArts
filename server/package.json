@@ -1,0 +1,21 @@
+{
+  "name": "tataeserver",
+  "version": "1.0.0",
+  "description": "backend to handle requests for the marketting website for Mr.Tukaram Chodankar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "modularizing",
+    "simplifying",
+    "process_oriented"
+  ],
+  "author": "Shubham Chodankar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
