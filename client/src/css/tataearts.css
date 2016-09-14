@@ -1,0 +1,19 @@
+@media only screen and (max-width: 654px){
+    body{
+      padding-top: 13%;
+	}
+	.title{
+		margin: 2% 0% 2% 1%;
+		font-size:20px;
+	}
+}
+
+@media only screen and (min-width: 654px){
+	body{
+      padding-top: 11%;
+	}
+	.title{
+		margin: 2% 0% 2% 1%;
+		font-size:28px;
+	}
+}
