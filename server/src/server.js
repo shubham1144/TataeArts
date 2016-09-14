@@ -2,10 +2,13 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var favicon = require('serve-favicon');
 //Setting the port as 80 as we have configured 80 as default port for http on EC2 instance
 var PORT = process.env.PORT || 80;
 //We need to set location of our static files
 app.use(express.static(path.join(__dirname, "../../client")));
+//Adding a favicon for the website 
+app.use(favicon(path.join(__dirname,'../../client','src/img','tataelogo.jpg')));
 
 //Configure our basic server to respond index page
 app.get('*', function(req, res) {
