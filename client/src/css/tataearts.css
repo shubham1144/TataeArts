@@ -68,8 +68,25 @@
 	background: url(https://images8.alphacoders.com/370/370799.jpg);
 	content: "";
 }
+/**
+*Apply css to change background color of circles on hover
+*/
 
+.circle.aboutus:after {
+	background: orange;
+}
 
+.circle.ourjourney:after {
+	background: #7b8fd1;
+}
+
+.circle.contactus:after {
+	background: #f06e47;
+}
+
+/**
+* css to change background colour on hover ends here
+*/
 .circle__inner {
 	position: absolute;
 	top: 0;
@@ -88,8 +105,13 @@
 .circle__content {
 	display: table-cell;
 	color: white;
-	padding: 40% 1em 1em 1em;
+	padding: 40% 1em 50% 1em;
 	vertical-align: middle;
+}
+
+.circle__content:hover {
+
+	cursor: pointer; cursor: hand;
 }
 
 @media (min-width: 480px) {
@@ -153,7 +175,7 @@
 	}
 	.circle__content {
 		display: table-cell;
-		padding: 40% 30% 30% 30%;
+		padding: 40% 30% 40% 30%;
 		vertical-align: middle;
 		font-size: 70%;
 	}
@@ -213,3 +235,5 @@
     max-width: 100%;
     height: auto;
 }
+
+

@@ -12,6 +12,40 @@
 		<script src="assets/jquery/dist/jquery.min.js"></script>
 		<script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="dist/tataearts.min.js"></script>
+		<!--Adding inline script to manipulate css -->
+		<script type="text/javascript">
+			//Code to apply css using javascript as :after is outside dom manipulation
+			$(document).ready(function(){
+                //About us css change logic 
+				$("#aboutus_content").hover(
+					function () {
+						$("#aboutusCircle").toggleClass('aboutus');
+					},
+					function () {
+						$("#aboutusCircle").toggleClass('aboutus');
+					}
+				);
+				//OurJourney css change logic
+				$("#ourjouney_content").hover(
+					function () {
+						$("#ourjourneyCircle").toggleClass('ourjourney');
+					},
+					function () {
+						$("#ourjourneyCircle").toggleClass('ourjourney');
+					}
+				);				
+				//ContactUs css change logic
+				$("#contactus_content").hover(
+					function () {
+						$("#contactusCircle").toggleClass('contactus');
+					},
+					function () {
+						$("#contactusCircle").toggleClass('contactus');
+					}
+				);
+			});
+		</script>
+		<!-- inline css ends here -->
 	</head>
 	<body ng-app="tataeArtsApp" ng-controller="HomeCtrl">
 		<!-- Adding a nav bar -->
@@ -25,29 +59,29 @@
 		<div class="container-fluid background-dark-bc firstSection">
 			<div>
 				<!--circle starts here -->
-				<div class="circle">
+				<div id="aboutusCircle" class="circle">
 					<div class="circle__inner">
 						<div class="circle__wrapper">
-							<div class="circle__content">About Us</div>
+							<div  id = "aboutus_content" class="circle__content aboutus">About Us</div>
 						</div>
 					</div>
 				</div>
 				<!-- circle ends here -->
 			
 				<!--circle starts here -->
-				<div class="circle">
+				<div id="ourjourneyCircle" class="circle">
 					<div class="circle__inner">
 						<div class="circle__wrapper">
-							<div class="circle__content">Our Journey</div>
+							<div id="ourjouney_content" class="circle__content">Our Journey</div>
 						</div>
 					</div>
 				</div>
 				<!-- circle ends here -->	
 				<!--circle starts here -->
-				<div class="circle">
+				<div id="contactusCircle" class="circle">
 					<div class="circle__inner">
 						<div class="circle__wrapper">
-							<div class="circle__content">Contact Us</div>
+							<div id="contactus_content" class="circle__content">Contact Us</div>
 						</div>
 					</div>
 				</div>
