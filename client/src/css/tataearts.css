@@ -25,9 +25,19 @@
 .background-dark-bc {
     background: #315989;
 }
+
 .background-orange-bc{
 	background: linear-gradient(0deg, #f06e47, #ffab4a);
 }
+
+.background-red-bc{
+    background: #eb5a46;
+}
+
+.background-white-bc{
+    background: white;
+}
+
 .firstSection{
 	padding-bottom: 80px;
 	color: #fff;
@@ -41,6 +51,15 @@
 	text-align: center;
 }
  
+/**
+*Css for contact number starts here
+*/
+.contact{
+	font-size: 6em;
+}
+/**
+*Css for contact numeber ends here
+*/
 
 /**
  * Circle Styles
@@ -179,6 +198,9 @@
 		vertical-align: middle;
 		font-size: 70%;
 	}
+	.contact{
+		font-size: 4em;
+	}
 }
 
 
@@ -200,6 +222,10 @@
 		padding: 38% 9% 55% 9%;
 		vertical-align: middle;
 		font-size: 62%;
+	}
+
+	.contact{
+		font-size: 2em;
 	}
 }
 @media (max-width: 200px){
