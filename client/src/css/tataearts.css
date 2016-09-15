@@ -175,7 +175,7 @@
 	}
 	.circle__content {
 		display: table-cell;
-		padding: 40% 30% 40% 30%;
+		padding: 40% 30% 53% 30%;
 		vertical-align: middle;
 		font-size: 70%;
 	}
@@ -197,7 +197,7 @@
 
 	.circle__content {
 		display: table-cell;
-		padding: 38% 9% 9% 9%;
+		padding: 38% 9% 55% 9%;
 		vertical-align: middle;
 		font-size: 62%;
 	}
