@@ -37,6 +37,14 @@
     background: #eb5a46;
 }
 
+.background-yellowish-bc{
+    background: linear-gradient(0deg, rgba(243,172,37,0.9), rgba(243,172,37,0.9)), url(http://bricksandbrushes.com/wp-content/uploads/2015/05/download-paint-brushes-puzzle-wallpaper-hd-wallpapers-wallpaper-paint-brush-download-brushes-puzzle-hd-wallpapers.jpg
+) no-repeat;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+}
+
 .background-white-bc{
     background: white;
 }
