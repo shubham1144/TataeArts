@@ -23,7 +23,10 @@
 
 
 .background-dark-bc {
-    background: #315989;
+	background: linear-gradient(0deg, rgba(49,89,137,0.7), rgba(49,89,137,0.7)), url(http://www.orangeadnan.com/dev/wp-content/uploads/2013/06/cool-wallpapers-hd-for-pc-hd-wallpapers-1024x640.jpeg) no-repeat;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
 }
 
 .background-orange-bc{
