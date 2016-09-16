@@ -72,6 +72,12 @@
 *Css for contact numeber ends here
 */
 
+.aboutus_content{
+		font-size: 25px;
+		font-weight: 300;
+		text-align:justify;
+	}
+
 /**
  * Circle Styles
  */
@@ -244,6 +250,11 @@
 	}
 	.email{
 		font-size: 1.5em;
+	}
+	.aboutus_content{
+		font-size: 20px;
+		font-weight: 300;
+		text-align:justify;
 	}
 }
 @media (max-width: 200px){
