@@ -1,5 +1,5 @@
 //Main controller for the landing page of the application
-app.controller('HomeCtrl', function($scope){
+app.controller('HomeCtrl', function($anchorScroll, $location, $scope){
 	$scope.test = 'We deliver quality and smile to our customers!';
 	//Adding code for displaying 'carousal' sample
 	$scope.myInterval = 4500;
@@ -58,4 +58,17 @@ app.controller('HomeCtrl', function($scope){
 		return array;
 	}
 	//Code for 'carousal' sample ends here
+	//Code for anchor scroll in angular.js
+	$scope.gotoAnchor = function(anchorId) {
+		if ($location.hash() !== anchorId) {
+		// set the $location.hash to `newHash` and
+		// $anchorScroll will automatically scroll to it
+		$location.hash(anchorId);
+		} else {
+		// call $anchorScroll() explicitly,
+		// since $location.hash hasn't changed
+		$anchorScroll();
+		}
+	};
+      //Code for anchor scroll ends here
 });
