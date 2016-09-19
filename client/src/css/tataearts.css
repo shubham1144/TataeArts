@@ -31,6 +31,7 @@
 
 .background-orange-bc{
 	background: linear-gradient(0deg, #f06e47, #ffab4a);
+	min-height: 590px;
 }
 
 .background-red-bc{
@@ -47,6 +48,7 @@
 
 .background-blue-bc{
 	background: linear-gradient(0deg, #4AFFFF, #1B96D0);
+	min-height: 590px;
 }
 
 .background-white-bc{
@@ -259,6 +261,14 @@
 		font-size: 20px;
 		font-weight: 300;
 		text-align:justify;
+	}
+	.background-orange-bc{
+		background: linear-gradient(0deg, #f06e47, #ffab4a);
+		min-height: 370px;
+	}
+	.background-blue-bc{
+		background: linear-gradient(0deg, #4AFFFF, #1B96D0);
+		min-height: 370px;
 	}
 }
 @media (max-width: 200px){
