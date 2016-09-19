@@ -73,7 +73,7 @@
 				<div id="ourjourneyCircle" class="circle">
 					<div class="circle__inner">
 						<div class="circle__wrapper">
-							<div id="ourjouney_content" ng-click="gotoAnchor('AboutUs');" class="circle__content">Our Journey</div>
+							<div id="ourjouney_content" ng-click="gotoAnchor('ArtWork');" class="circle__content">Art Journey</div>
 						</div>
 					</div>
 				</div>
@@ -167,6 +167,25 @@
 			</div>
 		</div>
 		<!--Section4 ends here-->
+		<!--Section5(Art Work carousel) starts here-->
+		<div id="ArtWork" class="container-fluid background-blue-bc" style="height: 590px;">
+			<div class="row" style="color: white;text-align: center;font-size: 2.42em;">
+				<h2 style="font-weight: 400;">Our Art Work</h2>
+			</div>
+			<!-- Adding code for carousal here -->
+			<div style="height: 305px;padding-top: 1%;">
+				<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+				<div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+					<img class="img-fluid" ng-src="{{slide.image}}" style="margin:auto;">
+					<div class="carousel-caption">
+						<p>{{slide.text}}</p>
+					</div>
+				</div>
+				</div>
+			</div>
+			<!-- Code for carousal ends here -->
+		</div>
+		<!--Section5 ends here-->
 		<!--Footer starts here-->
 		<div class="container-fluid background-white-bc" style="height: 110px;padding-top: 5%;text-align: center;color: #999;font-weight: 300;font-size: large;">
            © Copyright 2016, TatateArts.

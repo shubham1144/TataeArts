@@ -45,6 +45,10 @@
 	background-position:center;
 }
 
+.background-blue-bc{
+	background: linear-gradient(0deg, #4AFFFF, #1B96D0);
+}
+
 .background-white-bc{
     background: white;
 }
