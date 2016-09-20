@@ -31,7 +31,7 @@ app.controller('uploadController', function($anchorScroll, $location, $scope){
             objXhr.addEventListener("load", transferComplete, false);
 
             // SEND FILE DETAILS TO THE API.
-            objXhr.open("POST", "/ArtImages");
+            objXhr.open("POST", "/addArtImages");
             objXhr.send(data);
         };
 

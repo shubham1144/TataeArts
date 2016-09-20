@@ -1,0 +1,36 @@
+<!--page for uploading images from client side-->
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--Include all css files required-->
+		<link rel="stylesheet" href="./assets/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./src/css/tataearts.css">
+		<!--Include all js scripts required-->
+		<script src="assets/angular/angular.min.js"></script>
+		<script src="assets/angular-animate/angular-animate.min.js"></script>
+		<script src="assets/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="assets/jquery/dist/jquery.min.js"></script>
+		<script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="dist/tataearts.min.js"></script>
+	</head>
+	<body ng-app="tataeArtsApp" ng-controller="uploadController" style="
+    padding-top: 20%;">
+		<!-- Adding a nav bar -->
+		<nav class="navbar navbar-fixed-top navbar-dark bg-primary">
+			<div class="container-fluid title">
+				<img  class="navbar-brand img-circle" style="padding:2px 0px 12px 4px;" src="./src/img/tataelogo.jpg">
+				TatateArts
+			</div>
+		</nav>
+		<!-- Nav bar end here-->
+		<input type="file" id="file" name="file" multiple
+		onchange="angular.element(this).scope().getFileDetails(this)" />
+
+		<input type="button" ng-click="uploadFiles()" value="Upload" />
+
+		<!--ADD A PROGRESS BAR ELEMENT.-->
+		<p><progress id="pro" value="0"></progress></p>
+	</body>
+
+</html>

@@ -21,7 +21,7 @@ aws.config.loadFromPath(path.join(__dirname, './AwsConfig.json'));
 //Logic to Upload files to AWS S3 Bucket
 var s3 = new aws.S3();
 //API for accepting files uploaded from client
-app.post('/ArtImages', upload.any(), function(req, res){
+app.post('/addArtImages', upload.any(), function(req, res){
 	console.log('Image Files received by server for uploading to S3 bucket...');
 	console.log(req.files);
   //Once the file(s) are received upload to s3 bucket, Use a loop to upload the files
@@ -29,19 +29,28 @@ app.post('/ArtImages', upload.any(), function(req, res){
     uploadFile('Art/' + moment.unix(moment()) +'.jpg', req.files[i]); 
   }
 });
-//Configure our basic server to respond admin panel
+
+//API to get list of Art Images on s3
+app.get('/getArtImages', function(req, res) {
+  console.log("Trying to fetch list of images...");
+  getListOfObjects();
+});
+
+//API to return admin panel
 app.get('/uploadPanel', function(req, res) {
 	res.sendFile(path.join(__dirname, '../../client', 'upload.html')); // load the single view file (angular will handle the page changes on the front-end)
 });
-//Configure our basic server to respond index page
+
+//Configure our basic server to respond index page/Landing page
 app.get('*', function(req, res) {
-	res.sendFile(path.join(__dirname, '../../client', 'index.html')); // load the single view file (angular will handle the page changes on the front-end)
+  res.sendFile(path.join(__dirname, '../../client', 'index.html')); // load the single view file (angular will handle the page changes on the front-end)
 });
+
 //Start the server
 app.listen(PORT);
 console.log('Server is up and running on port ' + PORT);
 
-//A function to upload a single file to amazon s3 bucket
+//Function to upload a single file to amazon s3 bucket
 function uploadFile(remoteFilename, file) {
   //console.log('Attempting to upload file to s3..');
   var metaData = file.mimetype;
@@ -54,11 +63,9 @@ function uploadFile(remoteFilename, file) {
     ContentType: metaData
   }, function(error, response) {
     console.log('uploaded file[' + file.originalname + '] to [' + remoteFilename + '] as [' + metaData + ']');
-    //console.log(arguments);
-    //On successful upload store the link in mongodb
-    //Insert into db value (S3_LINK + remoteFilename);
   });
 }
+
 //Function to get content type by file
 function getContentTypeByFile(fileName) {
   var rc = 'application/octet-stream';
@@ -72,4 +79,29 @@ function getContentTypeByFile(fileName) {
   else if (fileNameLowerCase.indexOf('.jpg') >= 0) rc = 'image/jpg';
 
   return rc;
+}
+
+//Function to list the objects in the bucket
+function getListOfObjects(){
+  var artImages = [];
+  var params = {
+    Bucket: 'tataearts', /* required */
+    Prefix: 'Art/1'
+  };
+  s3.listObjects(params, function(err, data) {
+    if (err) 
+    {
+      console.log(err, err.stack); // an error occurred
+    }
+    else     
+    {
+      console.log(data.Contents);// successful response
+      for(i=0; i<data.Contents.length; i++)
+      {
+         //console.log(data.Contents[i].Key);
+         artImages.push(data.Contents[i].Key);
+      }
+      console.log(artImages);
+    }
+  });
 }
