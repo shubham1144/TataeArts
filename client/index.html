@@ -125,7 +125,7 @@
 			</div>
 			<div class="row" style="text-align: center;color:white;">
 				<h3 style="font-weight: lighter;">Have a Question?</h3>
-				 <button type="button" class="btn btn-primary btn-lg">Ask Us</button>
+				 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#AskUsModel">Ask Us</button>
 			</div>
 		</div>
 		<!--Section3 ends here-->
@@ -198,6 +198,38 @@
            © Copyright 2016, TatateArts.
 		</div>
 		<!--Footer ends here-->
+		<div class="modal fade" id="AskUsModel" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Ask Us</h4>
+					</div>
+					<div class="modal-body col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+						<div class="row">
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+								<input class="form-control" id="name" type="text" placeholder="Name">
+							</div>
+						</div>
+						<div class="row" style="padding-top:10px;">
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+								<input class="form-control" id="contact" type="text" placeholder="Contact">
+							</div>
+						</div>
+						<div class="row" style="padding-top:10px;">
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+								<label for="comment">Query Details:</label>
+								<textarea class="form-control" id="question" rows="5"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Ask</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 	<script>
 			// Only enable if the document has a long scroll bar
