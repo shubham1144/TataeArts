@@ -107,8 +107,9 @@
 	height: 0;
 	border-radius: 50%;
 	background-color: #ddd;
-	background: url(https://images8.alphacoders.com/370/370799.jpg);
+	background: url(http://www.wallcoo.net/paint/background_brush_canvas_texture_picture/images/brush_canvas_texture_Background_BS08051_wallcoo.com.jpg) no-repeat;
 	content: "";
+	background-position: center;
 }
 /**
 *Apply css to change background color of circles on hover
