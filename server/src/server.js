@@ -6,6 +6,8 @@ var favicon = require('serve-favicon');
 var aws = require('aws-sdk');
 var fs = require('fs');
 var S3_LINK = 'https://s3.ap-south-1.amazonaws.com/tataearts/';
+var moment = require('moment');
+moment().format();
 var multer = require('multer');
 var upload = multer();
 //Setting the port as 80 as we have configured 80 as default port for http on EC2 instance
@@ -18,18 +20,13 @@ app.use(favicon(path.join(__dirname,'../../client','src/img','tataelogo.jpg')));
 aws.config.loadFromPath(path.join(__dirname, './AwsConfig.json'));
 //Logic to Upload files to AWS S3 Bucket
 var s3 = new aws.S3();
-//Testing file upload to amazon s3 bucket
-app.get('/testSingleFileUpload', function(req, res){
-	console.log('Testing file upload to amazon s3 bucket...');
-	uploadFile('Art/image1.jpg', 'tataelogo.jpg');
-});
 //API for accepting files uploaded from client
 app.post('/ArtImages', upload.any(), function(req, res){
 	console.log('Image Files received by server for uploading to S3 bucket...');
 	console.log(req.files);
   //Once the file(s) are received upload to s3 bucket, Use a loop to upload the files
   for(i=0; i<req.files.length; i++){
-    uploadFile('Art/' + 'image' + i + '.jpg', req.files[i]); 
+    uploadFile('Art/' + moment.unix(moment()) +'.jpg', req.files[i]); 
   }
 });
 //Configure our basic server to respond admin panel
