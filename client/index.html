@@ -186,10 +186,27 @@
 			<!-- Code for carousal ends here -->
 		</div>
 		<!--Section5 ends here-->
+		<!-- Section for Back to top icon-->
+		<span id="top-link-block" class="hidden">
+			<a href="#circleAnchor" class="well well-sm"  onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+				<i class="glyphicon glyphicon-chevron-up"></i> 
+			</a>
+		</span>
+		<!--Section for back to top icon ends -->
 		<!--Footer starts here-->
 		<div class="container-fluid background-white-bc" style="height: 110px;padding-top: 5%;text-align: center;color: #999;font-weight: 300;font-size: large;">
            © Copyright 2016, TatateArts.
 		</div>
 		<!--Footer ends here-->
 	</body>
+	<script>
+			// Only enable if the document has a long scroll bar
+			//Back to top logic
+			if ( ($(window).height() + 100) < $(document).height() ) {
+				$('#top-link-block').removeClass('hidden').affix({
+					// how far to scroll down before link "slides" into view
+					offset: {top:100}
+				});
+			}
+	</script>
 </html>
