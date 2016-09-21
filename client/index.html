@@ -173,10 +173,10 @@
 				<h2 style="font-weight: 400;">Our Art Work</h2>
 			</div>
 			<!-- Adding code for carousal here -->
-			<div style="height: 305px;padding-top: 1%;">
+			<div style="height: 305px;padding-top: 1%;" ng-init="getArtImageLinks();">
 				<div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
 				<div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-					<img class="img-fluid" ng-src="{{slide.image}}" style="margin:auto;">
+					<img class="img-fluid" ng-src="{{slide.image}}" style="margin:auto;" >
 					<div class="carousel-caption">
 						<p>{{slide.text}}</p>
 					</div>

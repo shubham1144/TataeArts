@@ -33,7 +33,7 @@ app.post('/addArtImages', upload.any(), function(req, res){
 //API to get list of Art Images on s3
 app.get('/getArtImages', function(req, res) {
   console.log("Trying to fetch list of images...");
-  getListOfObjects();
+  getListOfObjects(res);
 });
 
 //API to return admin panel
@@ -82,12 +82,13 @@ function getContentTypeByFile(fileName) {
 }
 
 //Function to list the objects in the bucket
-function getListOfObjects(){
+function getListOfObjects(res){
   var artImages = [];
   var params = {
     Bucket: 'tataearts', /* required */
     Prefix: 'Art/1'
   };
+  //Call 'listObjects' function to get list of images in Art Folder 
   s3.listObjects(params, function(err, data) {
     if (err) 
     {
@@ -99,9 +100,10 @@ function getListOfObjects(){
       for(i=0; i<data.Contents.length; i++)
       {
          //console.log(data.Contents[i].Key);
-         artImages.push(data.Contents[i].Key);
+         //Before pushing append the 'S3_LINK' at the start
+         artImages.push(S3_LINK + data.Contents[i].Key);
       }
-      console.log(artImages);
+      res.send(artImages);
     }
   });
 }

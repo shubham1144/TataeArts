@@ -1,5 +1,5 @@
 //Main controller for the landing page of the application
-app.controller('HomeCtrl', function($anchorScroll, $location, $scope){
+app.controller('HomeCtrl', function($anchorScroll, $location, $scope, $http){
 	$scope.test = 'We deliver quality and smile to our customers!';
 	//Adding code for displaying 'carousal' sample
 	$scope.myInterval = 4500;
@@ -17,14 +17,25 @@ app.controller('HomeCtrl', function($anchorScroll, $location, $scope){
 		});
 	};
 
+	//Function to send request to server on page load to fetch list
+	$scope.getArtImageLinks = function(){
+        $http.get('/getArtImages').then(function(response){
+        	for(var i = 0; i < response.data.length; i++){
+              slides.push({
+              	image: response.data[i],
+      			text: ['Nice image','Awesome photograph','That is so cool','I love that'][slides.length % 4],
+              	id: i
+              });
+        	}
+        }, function(error){
+
+        });
+	};
+
 	$scope.randomize = function() {
 		var indexes = generateIndexesArray();
 		assignNewIndexesToSlides(indexes);
 	};
-
-	for (var i = 0; i < 4; i++) {
-		$scope.addSlide();
-	}
 
 	// Randomize logic below
 
