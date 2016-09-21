@@ -15,7 +15,7 @@
 		<script src="dist/tataearts.min.js"></script>
 	</head>
 	<body ng-app="tataeArtsApp" ng-controller="uploadController" style="
-    padding-top: 30%;padding-right:10%;">
+    padding-top: 20%;padding-left:35%;">
 		<!-- Adding a nav bar -->
 		<nav class="navbar navbar-fixed-top navbar-dark bg-primary">
 			<div class="container-fluid title">
@@ -24,13 +24,21 @@
 			</div>
 		</nav>
 		<!-- Nav bar end here-->
-		<input type="file" id="file" name="file" multiple
-		onchange="angular.element(this).scope().getFileDetails(this)" />
+		<div class="row">
+			<h2>Upload Your Art Now</h2>
+		</div>
+		<div class="row" style="padding-bottom: 2%;">
+			<input type="file" id="file" name="file" multiple="" onchange="angular.element(this).scope().getFileDetails(this)">
+		</div>
 
-		<input type="button" ng-click="uploadFiles()" value="Upload" />
+		<div class="row" style="padding-bottom: 2%;font-size: 2em;">
+			<button type="button" class="btn btn-primary" ng-click="uploadFiles()">Upload</button>
+		</div>
 
-		<!--ADD A PROGRESS BAR ELEMENT.-->
-		<p><progress id="pro" value="0"></progress></p>
+		<div class="row" style="padding-bottom: 2%;font-size:25px;">
+			<!--ADD A PROGRESS BAR ELEMENT.-->
+			<p><progress id="pro" value="0"></progress></p>
+		</div>
 	</body>
 
 </html>
