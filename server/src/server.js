@@ -28,6 +28,7 @@ app.post('/addArtImages', upload.any(), function(req, res){
   for(i=0; i<req.files.length; i++){
     uploadFile('Art/' + moment.unix(moment()) +'.jpg', req.files[i]); 
   }
+  res.json({ upload: successful });
 });
 
 //API to get list of Art Images on s3
