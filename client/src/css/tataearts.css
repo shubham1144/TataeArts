@@ -23,7 +23,7 @@
 
 
 .background-dark-bc {
-	background: linear-gradient(0deg, rgba(49,89,137,0.7), rgba(49,89,137,0.7)), url(http://www.orangeadnan.com/dev/wp-content/uploads/2013/06/cool-wallpapers-hd-for-pc-hd-wallpapers-1024x640.jpeg) no-repeat;
+	background: linear-gradient(0deg, rgba(49,89,137,0.7), rgba(49,89,137,0.7)), url('../img/Section_1_bg.jpeg') no-repeat;
 	background-repeat:no-repeat;
 	background-size:cover;
 	background-position:center;
@@ -39,7 +39,7 @@
 }
 
 .background-yellowish-bc{
-    background: linear-gradient(0deg, rgba(243,172,37,0.9), rgba(243,172,37,0.9)), url(http://bricksandbrushes.com/wp-content/uploads/2015/05/download-paint-brushes-puzzle-wallpaper-hd-wallpapers-wallpaper-paint-brush-download-brushes-puzzle-hd-wallpapers.jpg
+    background: linear-gradient(0deg, rgba(243,172,37,0.9), rgba(243,172,37,0.9)), url('../img/Section_4_bg.jpg'
 ) no-repeat;
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -112,7 +112,7 @@
 	height: 0;
 	border-radius: 50%;
 	background-color: #ddd;
-	background: url(http://www.wallcoo.net/paint/background_brush_canvas_texture_picture/images/brush_canvas_texture_Background_BS08051_wallcoo.com.jpg) no-repeat;
+	background: url('../img/Section_1_Circle_bg.jpg') no-repeat;
 	content: "";
 	background-position: center;
 }
