@@ -212,23 +212,23 @@
 					<div class="modal-body col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
 						<div class="row">
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-								<input class="form-control" id="name" type="text" placeholder="Name">
+								<input class="form-control" id="name" ng-model="ask.name" type="text" placeholder="Name">
 							</div>
 						</div>
 						<div class="row" style="padding-top:10px;">
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-								<input class="form-control" id="contact" type="text" placeholder="Contact">
+								<input class="form-control" id="contact" ng-model="ask.contactNumber" type="number" placeholder="Contact">
 							</div>
 						</div>
 						<div class="row" style="padding-top:10px;">
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 								<label for="comment">Query Details:</label>
-								<textarea class="form-control" id="question" rows="5"></textarea>
+								<textarea class="form-control" id="question" ng-model="ask.description" rows="5"></textarea>
 							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal">Ask</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="askUs();">Ask</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</div>

@@ -7,6 +7,11 @@ app.controller('HomeCtrl', function($anchorScroll, $location, $scope, $http){
 	$scope.active = 0;
 	var slides = $scope.slides = [];
 	var currIndex = 0;
+	$scope.ask = {
+		name : '',
+		contactNumber : '',
+		description : ''
+	};
 
 	$scope.addSlide = function() {
 		var newWidth = 800 + slides.length + 1;
@@ -81,5 +86,16 @@ app.controller('HomeCtrl', function($anchorScroll, $location, $scope, $http){
 		$anchorScroll();
 		}
 	};
-      //Code for anchor scroll ends here
+    //Code for anchor scroll ends here
+    //Code for submitting queries to the tatatearts server
+    $scope.askUs = function(){
+		//console.log('Inprogress api for queries...');
+		$http.post('/askQuery', $scope.ask)
+			.then(function(response){
+				//console.log("Question has been asked successfully");
+				}, function(error){
+
+			});
+    };
+    //Code for submitting query ends here
 });

@@ -61,8 +61,8 @@ app.get('/getArtImages', function(req, res) {
 
 //API to raise customer queries and store in mongodb
 app.post('/askQuery', function(req, res){
-  console.log("Trying to store the query raised in database...");
-  console.log("The content being received as query is : " + req.body);
+  //console.log("Trying to store the query raised in database...");
+  //console.log("The content being received as query is : " + req.body);
   var query = new CustomerQuery(req.body);
   query.save(function (err) {
     if (err) return handleError(err);
@@ -130,7 +130,7 @@ function getListOfObjects(res){
     }
     else     
     {
-      console.log(data.Contents);// successful response
+      //console.log(data.Contents);// successful response
       for(i=0; i<data.Contents.length; i++)
       {
          //console.log(data.Contents[i].Key);
