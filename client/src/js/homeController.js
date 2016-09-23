@@ -1,5 +1,5 @@
 //Main controller for the landing page of the application
-app.controller('HomeCtrl', function($anchorScroll, $location, $scope, $http){
+app.controller('HomeCtrl', function($anchorScroll, $location, $scope, $http, toaster){
 	$scope.test = 'We deliver quality and smile to our customers!';
 	//Adding code for displaying 'carousal' sample
 	$scope.myInterval = 4500;
@@ -93,9 +93,15 @@ app.controller('HomeCtrl', function($anchorScroll, $location, $scope, $http){
 		$http.post('/askQuery', $scope.ask)
 			.then(function(response){
 				//console.log("Question has been asked successfully");
+				$scope.popup();
 				}, function(error){
 
 			});
     };
     //Code for submitting query ends here
+    //Testing toaster popup
+    $scope.popup = function(){
+    	//console.log("Trying to display a popup");
+		toaster.success({title: "Request Submitted", body:"We will get back to you soon"});
+    };
 });

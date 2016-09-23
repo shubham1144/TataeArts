@@ -1,5 +1,5 @@
 //Initializing the application
-var app = angular.module('tataeArtsApp', ['ngAnimate','ui.bootstrap']);
+var app = angular.module('tataeArtsApp', ['ngAnimate','ui.bootstrap', 'toaster']);
 
 //Function to scroll into the anchor by another 0 pixels extra
 app.run(['$anchorScroll', function($anchorScroll) {
